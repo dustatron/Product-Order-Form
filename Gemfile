@@ -20,6 +20,9 @@ gem 'sass-rails', '>= 3.2'
 # Use Jquery
 gem 'jquery-rails'
 
+# Use Devise for User log-ins
+gem 'devise'
+
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 5.0'
 
