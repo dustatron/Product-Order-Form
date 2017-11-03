@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AdidasOrderForm</title>
+    <title>Adi Order</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header text-center">
+          <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Adi Order</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+          <ul class="nav navbar-nav navbar-right text-center">
+            <li class="active"><a href="#">History</a></li>
+            <li><a href="#">New </a></li>
+            <li><a href="#">Save</a></li>
+            <li>
+              <% if user_signed_in? %>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete %>
+                </button>
+              <% else %>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to 'LOG IN', new_user_session_path%>
+                </button>
+              <% end %>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </nav>
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
