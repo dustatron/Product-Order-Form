@@ -28,6 +28,7 @@
               <li class="active"><%= link_to "Que", root_path %></li>
               <li><%= link_to "New", orders_path %></li>
               <li><a href="#">Save</a></li>
+              <li><%= link_to "Settings",  edit_user_registration_path %></li>
               <li>
                 <button type="button" class="btn btn-default navbar-btn">
                   <%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete %>
