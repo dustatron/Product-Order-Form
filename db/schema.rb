@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105021653) do
+ActiveRecord::Schema.define(version: 20171106054548) do
+
+  create_table "items", force: :cascade do |t|
+    t.string "ship_to_street"
+    t.string "ship_to_city"
+    t.string "ship_to_state"
+    t.integer "ship_to_zip"
+    t.string "artical_number"
+    t.string "artical_size"
+    t.string "artical_quantity"
+    t.string "artical_gender"
+    t.string "artical_division"
+    t.string "submitted_by"
+    t.string "order_number"
+    t.string "budget_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string "name"
