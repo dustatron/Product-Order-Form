@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 
   end
 
+
   def create
     name = current_user.email
 
@@ -23,7 +24,7 @@ class HomeController < ApplicationController
 
     if @order.save
       flash[:notice] = "Order successfully created"
-      redirect_to root_path
+      redirect_to new_order_path(order: order_number)
     else
        flash[:notice] = "There was an error"
        redirect_to root_path

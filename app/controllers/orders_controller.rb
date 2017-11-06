@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @order = Order.where(user_id: current_user.id)
+    @order = params[:order]
 
   end
 
