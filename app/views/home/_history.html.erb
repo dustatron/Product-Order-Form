@@ -1,7 +1,7 @@
 <div class="row">
 
   <div class="col-md-6 col-md-offset-3 block-right">
-      <%= button_to 'New Order', root_path, method: :create, class: 'btn btn-lg btn-block btn-success' %>
+      <%= button_to 'New Order', home_index_path, method: :create, class: 'btn btn-lg btn-block btn-success' %>
   </div>
 
 </div>
@@ -16,7 +16,7 @@
         <a href="#">Edit</a> |
         <%= link_to 'Delete',  { action: :destroy, id: order.id },
        method: :delete,
-       data: { confirm: "Delete this news order?" }
+       data: { confirm: "Delete this news?" }
        %>
       </div>
 
