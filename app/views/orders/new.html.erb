@@ -1,2 +1,7 @@
 <h1>New Orders</h1>
 <%= @order %>
+
+<%= form_for([@order, @item]) do |f| %>
+  <%=f.artical_number%>
+
+<% end %>
