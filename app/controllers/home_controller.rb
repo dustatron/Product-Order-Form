@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 
     if @order.save
       flash[:notice] = "Order successfully created"
-      redirect_to new_order_item_path(order_id: order_number)
+      redirect_to new_order_path(order_id: @order.id)
     else
        flash[:notice] = "There was an error"
        redirect_to root_path

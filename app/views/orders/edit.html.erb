@@ -1,1 +1,12 @@
-<h1>Edit Orders</h1>
+
+<div class="container">
+
+  <div class="text-center">
+    <h2>Edit Order <%= @order.id %></h2>
+  </div>
+  <div class="col-md-12 text-left">
+      <%= render partial: 'details', object: @order %>
+
+  </div>
+
+</div>

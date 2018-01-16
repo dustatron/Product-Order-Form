@@ -1,7 +1,11 @@
-<h1>New Orders</h1>
-<%= @order %>
+<div class="container">
+  <div class="col-12 text-center">
+    <h2>Created Order <%= @order_object.id %> </h2>
+  </div>
 
-<%= form_for([@order, @item]) do |f| %>
-  <%=f.artical_number%>
+  <div class="col-md-12 text-left">
+      <%= render partial: 'details', object: @order %>
 
-<% end %>
+  </div>
+
+</div>
