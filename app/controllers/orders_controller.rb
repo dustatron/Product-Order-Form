@@ -16,8 +16,8 @@ class OrdersController < ApplicationController
             :artical_number=> artical_number,
             :artical_size => artical_size,
             :artical_gender => artical_gender,
-            :order_number = @order,
-            :orders_id = orders_id,
+            :order_number => order,
+            :orders_id => orders_id,
           })
 
     if @order.save
