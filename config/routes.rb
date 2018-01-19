@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # post '/' => 'home#create'
   # delete '/' => 'home#destory'
 
-  get '/orders' => 'orders#new'
+  #get '/orders' => 'orders#new'
 
 
 end

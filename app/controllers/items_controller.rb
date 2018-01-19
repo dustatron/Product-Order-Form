@@ -10,8 +10,22 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @order = params[:id]
-    redirect_to root_path
+    @current_order = params[:id]
+
+    @item = Item.new({
+            :artical_number => "name",
+            :artical_size => "size",
+            :artical_gender => "gender",
+            :order_number => @current_order,
+          })
+
+      if @item.save
+        flash[:notice] = "Irder successfully created"
+        redirect_to edit_order_path(id: @current_order)
+      else
+         flash[:notice] = "There was an error"
+         redirect_to root_path
+       end
   end
 
   def create
@@ -27,6 +41,6 @@ class ItemsController < ApplicationController
 
   private
     def params_items
-      params.require(:item).permit(:artical_number, :artical_size, :artical_gender)
+      params.require(:item).permit(:number, :size, :gender)
     end
 end
