@@ -1,0 +1,16 @@
+<h2>This is a list</h2>
+<% if @list_items.any? %>
+<h3>Number of Items : <%= @list_items.count %> </h3>
+   <% @list_items.each do |item| %>
+  
+      <%= item.artical_number %> <br>
+      <%= item.artical_size %> <br>
+      <%= item.artical_gender %> <br>
+      <hr>
+   <% end %>
+ <% else %>
+ <div class="row">
+    <h3>Add Items To This Order</h3>
+ </div>
+
+ <% end %>

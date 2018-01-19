@@ -41,6 +41,8 @@ class OrdersController < ApplicationController
     @order_object = Order.find(params[:id])
     @user = User.find_by_id(@order_object.user_id)
 
+    @list_items = Item.where(order_number: @order)
+
 
   end
 
