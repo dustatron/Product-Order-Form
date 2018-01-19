@@ -1,11 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+  end
+
   def new
     @order = params[:order_id]
     @order_object = Order.find(params[:order_id])
     @user = User.find_by_id(@order_object.user_id)
-
   end
 
   def add_item
@@ -39,6 +41,8 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order_object = Order.find(params[:id])
     @user = User.find_by_id(@order_object.user_id)
+
+    
   end
 
 

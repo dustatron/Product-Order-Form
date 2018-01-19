@@ -11,7 +11,7 @@
   <% @order.each do |order| %>
     <div class="well">
       <div class="col-md-4">
-        <strong>Order :</strong><%= order.order_numbers %>
+        <strong>Order #:</strong><%= order.id %> // 
       </div>
       <div class="col-md-4 col-md-offset-4 text-right">
         <a href="#"><%= link_to 'Edit', edit_order_path(id: order.id) %></a> |

@@ -1,24 +1,28 @@
 class ItemsController < ApplicationController
 
-  def show
+  def index
 
+  end
+
+  def show
+    @order = params[:id]
+    redirect_to edit_order_path(id: @order)
+  end
+
+  def new
+    @order = params[:id]
+    redirect_to root_path
   end
 
   def create
-    order_number = params(:id)
-    @item = Item.new(params_items)
 
-    if @item.save
-      flash[:success] = "Item Saved."
-      redirect_to root_path
-    else
-      flash[:danger] = "Error Occured. Item not saved."
-    end
   end
 
   def edit
-    order_number = params(:id)
-    @item = Item.where(id: order_number)
+
+  end
+
+  def destroy
   end
 
   private

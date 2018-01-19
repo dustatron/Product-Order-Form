@@ -14,7 +14,7 @@ class HomeController < ApplicationController
 
     #order_number =  Order.count.to_s + "-" + DateTime.now.strftime('%m/%d/%Y').to_s
     random_number = rand(1000..9999)
-    order_number = ((Order.count) +1 ).to_s + "-" + current_user.id.to_s + "-" +random_number.to_s
+    order_number = ((Order.count) +1 ).to_s + "." + current_user.id.to_s + "." +random_number.to_s
 
     @order = Order.new({
             :user_id => current_user.id,
@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 
     if @order.save
       flash[:notice] = "Order successfully created"
-      redirect_to new_order_path(order_id: @order.id)
+      redirect_to edit_order_path(id: @order.id)
     else
        flash[:notice] = "There was an error"
        redirect_to root_path
