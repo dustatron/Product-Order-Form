@@ -25,9 +25,9 @@
           <ul class="nav navbar-nav navbar-right text-center">
 
               <% if user_signed_in? %>
-              <li class="active"><%= link_to "Que", root_path %></li>
+              <li class="active"><%= link_to "Home", root_path %></li>
               <li><%= link_to "New", home_index_path, method: :create, class: 'btn btn-lg btn-block btn-primary' %></li>
-              <li><a href="#">Save</a></li>
+
               <li><%= link_to "Settings",  edit_user_registration_path %></li>
               <li>
                 <button type="button" class="btn btn-default navbar-btn">
