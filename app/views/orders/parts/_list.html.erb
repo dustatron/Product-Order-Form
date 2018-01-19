@@ -2,7 +2,7 @@
 <% if @list_items.any? %>
 <h3>Number of Items : <%= @list_items.count %> </h3>
    <% @list_items.each do |item| %>
-  
+      <%= hidden_field :id, value: item.id %>
       <%= item.artical_number %> <br>
       <%= item.artical_size %> <br>
       <%= item.artical_gender %> <br>
