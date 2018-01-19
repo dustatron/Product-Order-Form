@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+
   end
 
   def new
@@ -9,7 +10,24 @@ class OrdersController < ApplicationController
   end
 
   def create
-    redirect_to root_path
+    current_order = params[:item][:id]
+
+
+    @item = Item.new({
+            :artical_number => item_params[:number],
+            :artical_size => item_params[:size],
+            :artical_gender => item_params[:gender],
+            :order_number => item_params[:id],
+          })
+
+      if @item.save
+        flash[:notice] = "Item successfully Added"
+        redirect_to edit_order_path(id: item_params[:id].to_i)
+      else
+        flash[:notice] = "Error"
+         flash[:error] = @item.errors.full_messages
+         redirect_to root_path
+       end
   end
 
   def destroy
@@ -23,11 +41,12 @@ class OrdersController < ApplicationController
     @order_object = Order.find(params[:id])
     @user = User.find_by_id(@order_object.user_id)
 
+
   end
 
   private
-    def params_items
-      params.require(:item).permit(:number, :size, :gender)
+    def item_params
+      params.require(:item).permit(:number, :size, :gender, :id)
     end
 
 
