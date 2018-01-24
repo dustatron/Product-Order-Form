@@ -4,7 +4,21 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
+  ship_to_street: '8244 N Farragut'
+  ship_to_city: 'Portland'
+  ship_to_state: 'OR'
+  ship_to_zip: '97217'
+  artical_number: '300'
+  artical_size: '5'
+  artical_quantity: '100'
+  artical_gender: 'male'
+  artical_division: 'shoes'
+  submitted_by: '1'
+  order_number: '1'
+  budget_code: '200'
+  orders_id: '1'
+
 # column: value
 #
 two: {}
